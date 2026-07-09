@@ -1,0 +1,37 @@
+{
+  "name": "pareto-csv",
+  "version": "0.1.0",
+  "author": "Corno",
+  "license": "Apache-2.0",
+  "description": "a package that provides CSV serialization for Pareto packages",
+  "keywords": [],
+  "homepage": "https://github.com/corno/pareto-csv#readme",
+  "bugs": {
+    "url": "https://github.com/corno/pareto-csv/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corno/pareto-csv.git"
+  },
+  "type": "module",
+  "exports": {
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "bin": {},
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "documentation"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "pareto-core": "^0.1.0",
+    "pareto-fountain-pen": "^0.4.0"
+  }
+}
