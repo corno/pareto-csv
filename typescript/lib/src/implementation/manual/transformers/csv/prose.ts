@@ -21,10 +21,10 @@ export namespace interface_ {
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
 export const CSV: interface_.CSV = ($, $p) => sh.pg.sentences(
-    p_.from.list($).map(
+    p_.from.list($.rows).map(
         ($) => sh.sentence([
             sh.ph.rich(
-                p_.from.list($,).map(
+                p_.from.list($.cells).map(
                     ($) => sh.ph.serialize(
                         p_.literal.segmented_list([
                             p_.literal.list([
