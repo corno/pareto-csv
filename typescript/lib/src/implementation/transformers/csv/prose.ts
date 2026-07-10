@@ -27,7 +27,7 @@ export namespace interface_ {
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
-export const CSV: interface_.CSV = ($, $p) => sh.pg.composed(
+export const CSV: interface_.CSV = ($, $p) => sh.pg.deprecated_composed(
     p_.literal.segmented_list([
         p_.from.optional($.header).decide(
             ($) => p_.literal.list([sh.pg.sentences([Row($, $p)])]),
