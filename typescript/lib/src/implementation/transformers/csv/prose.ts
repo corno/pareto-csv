@@ -3,21 +3,21 @@ import type * as p_i from 'pareto-core/interface/transformer'
 import p_list_from_text from 'pareto-core/implementation/refiner/specials/list_from_text'
 
 //data types
-import type * as d_out from "pareto-fountain-pen/interface/data/prose"
-import type * as d_in from "../../../interface/schemas/csv.js"
+import type * as s_out from "pareto-fountain-pen/interface/data/prose"
+import type * as s_in from "../../../interface/schemas/csv.js"
 
 export namespace interface_ {
 
     export type CSV = p_i.Transformer_With_Parameter<
-        d_in.CSV,
-        d_out.Paragraph,
+        s_in.CSV,
+        s_out.Paragraph,
         {
             'separator': number
         }
     >
     export type Row = p_i.Transformer_With_Parameter<
-        d_in.Row,
-        d_out.Sentence,
+        s_in.Row,
+        s_out.Sentence,
         {
             'separator': number
         }
