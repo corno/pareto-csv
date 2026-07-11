@@ -4,7 +4,7 @@ import p_list_from_text from 'pareto-core/implementation/refiner/specials/list_f
 
 //data types
 import type * as d_out from "pareto-fountain-pen/interface/data/prose"
-import type * as d_in from "../../../interface/data/csv.js"
+import type * as d_in from "../../../interface/schemas/csv.js"
 
 export namespace interface_ {
 
