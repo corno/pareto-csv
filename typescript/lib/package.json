@@ -1,6 +1,6 @@
 {
   "name": "pareto-csv",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "Corno",
   "license": "Apache-2.0",
   "description": "a package that provides CSV serialization for Pareto packages",

@@ -3,10 +3,10 @@ import type * as p_i from 'pareto-core/interface/transformer'
 import p_list_from_text from 'pareto-core/implementation/refiner/specials/list_from_text'
 
 //schemas
-import type * as s_out from "pareto-fountain-pen/interface/data/prose"
 import type * as s_in from "../../../interface/schemas/csv.js"
 
-export namespace interface_ {
+import type * as s_out from "../../../interface/schemas/prose.js"
+namespace declarations {
 
     export type CSV = p_i.Transformer_With_Parameter<
         s_in.CSV,
@@ -27,7 +27,7 @@ export namespace interface_ {
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
-export const CSV: interface_.CSV = ($, $p) => sh.pg.deprecated_composed(
+export const CSV: declarations.CSV = ($, $p) => sh.pg.deprecated_composed(
     p_.literal.segmented_list([
         p_.from.optional($.header).decide(
             ($) => p_.literal.list([sh.pg.sentences([Row($, $p)])]),
@@ -43,7 +43,7 @@ export const CSV: interface_.CSV = ($, $p) => sh.pg.deprecated_composed(
     ])
 )
 
-export const Row: interface_.Row = ($, $p) => sh.sentence([
+export const Row: declarations.Row = ($, $p) => sh.sentence([
     sh.ph.rich(
         p_.from.list($.cells).map(
             ($) => sh.ph.serialize(
