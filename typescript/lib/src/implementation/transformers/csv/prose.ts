@@ -2,7 +2,7 @@ import * as p_ from 'pareto-core/implementation/transformer'
 import type * as p_i from 'pareto-core/interface/transformer'
 import p_list_from_text from 'pareto-core/implementation/refiner/specials/list_from_text'
 
-//data types
+//schemas
 import type * as s_out from "pareto-fountain-pen/interface/data/prose"
 import type * as s_in from "../../../interface/schemas/csv.js"
 
