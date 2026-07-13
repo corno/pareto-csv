@@ -44,7 +44,7 @@ export const CSV: declarations.CSV = ($, $p) => sh.pg.deprecated_composed(
 )
 
 export const Row: declarations.Row = ($, $p) => sh.sentence([
-    sh.ph.rich(
+    sh.ph.rich_phrase(
         p_.from.list($.cells).map(
             ($) => sh.ph.serialize(
                 p_.literal.segmented_list([

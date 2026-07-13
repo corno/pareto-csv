@@ -1,5 +1,5 @@
 import * as p_ from 'pareto-core-shorthands/unconstrained_target'
-import type * as p_di from 'pareto-core/interface/data'
+import type * as p_di from 'pareto-core/interface/schema'
 
 import type * as s_target from "../../interface/schemas/csv.js"
 
