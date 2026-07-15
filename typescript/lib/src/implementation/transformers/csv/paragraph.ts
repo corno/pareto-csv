@@ -1,19 +1,22 @@
-import * as p_ from 'pareto-core/implementation/serializer'
+import * as p_ from 'pareto-core/implementation/transformer'
 import p_list_from_text from 'pareto-core/implementation/refiner/specials/list_from_text'
 
 //schemas
-import type * as s_in from "../../interface/schemas/csv.js"
+import type * as s_in from "../../../interface/schemas/csv.js"
+import type * as s_out from "../../../interface/schemas/paragraph.js"
 
 namespace declarations {
 
-    export type CSV = p_.Paragraph_Serializer_With_Parameter<
+    export type CSV = p_.Transformer_With_Parameter<
         s_in.CSV,
+        s_out.Paragraph,
         {
             'separator': number
         }
     >
-    export type Row = p_.Phrase_Serializer_With_Parameter<
+    export type Row = p_.Transformer_With_Parameter<
         s_in.Row,
+        s_out.Phrase,
         {
             'separator': number
         }
@@ -21,7 +24,7 @@ namespace declarations {
 }
 
 //shorthands
-import * as sh from "pareto-fountain-pen/shorthands/prose_extended/deprecated"
+import * as sh from "pareto-fountain-pen/shorthands/paragraph/deprecated"
 
 export const CSV: declarations.CSV = ($, $p) => sh.pg.deprecated_composed(
     p_.literal.segmented_list([
