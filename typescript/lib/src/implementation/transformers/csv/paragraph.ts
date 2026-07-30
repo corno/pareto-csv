@@ -24,7 +24,7 @@ namespace declarations {
 }
 
 //shorthands
-import * as sh from "pareto-fountain-pen/shorthands/paragraph/deprecated"
+import * as sh from "pareto-fountain-pen/modules/paragraph/shorthands/deprecated"
 
 export const CSV: declarations.CSV = ($, $p) => sh.pg.deprecated_composed(
     p_.literal.segmented_list([
