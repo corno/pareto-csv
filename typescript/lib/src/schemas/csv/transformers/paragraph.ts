@@ -2,8 +2,8 @@ import * as p_ from 'pareto-core/implementation/transformer'
 import p_list_from_text from 'pareto-core/implementation/refiner/specials/list_from_text'
 
 //schemas
-import type * as s_in from "../../../interface/schemas/csv.js"
-import type * as s_out from "../../../interface/schemas/paragraph.js"
+import type * as s_in from "../schema.js"
+import type * as s_out from "pareto-fountain-pen/modules/paragraph/schemas/paragraph/schema"
 
 namespace declarations {
 
@@ -24,7 +24,7 @@ namespace declarations {
 }
 
 //shorthands
-import * as sh from "pareto-fountain-pen/modules/paragraph/shorthands/deprecated"
+import * as sh from "pareto-fountain-pen/modules/paragraph/schemas/paragraph/shorthands/deprecated"
 
 export const CSV: declarations.CSV = ($, $p) => sh.pg.deprecated_composed(
     p_.literal.segmented_list([

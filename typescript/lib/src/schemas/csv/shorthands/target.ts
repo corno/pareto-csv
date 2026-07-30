@@ -1,7 +1,7 @@
 import * as p_ from 'pareto-core-shorthands/unconstrained_target'
 import type * as p_di from 'pareto-core/interface/schema'
 
-import type * as s_target from "../../interface/schemas/csv.js"
+import type * as s_target from "../schema.js"
 
 export const CSV = (
     header: p_di.Optional_Value<s_target.Row>,
