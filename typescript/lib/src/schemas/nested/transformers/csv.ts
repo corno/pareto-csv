@@ -23,9 +23,9 @@ import * as s_out from "../../csv/schema.js"
             p_.from.state($).decide(
                 ($): s_out.Rows => {
                     switch ($[0]) {
-                        case 'composed': return p_.ss($, ($) => Composed_Dictionary($))
-                        case 'leaf': return p_.ss($, ($) => Leaf_Dictionary($))
-                        default: return p_.au($[0])
+                        case 'composed': return p_.option($, ($) => Composed_Dictionary($))
+                        case 'leaf': return p_.option($, ($) => Leaf_Dictionary($))
+                        default: return p_.exhaustive($[0])
                     }
                 }
             )
