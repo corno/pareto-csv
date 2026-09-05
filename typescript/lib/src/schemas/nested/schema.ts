@@ -1,4 +1,4 @@
-import type * as p_ from 'pareto-core/interface/schema'
+import type * as p_ from 'pareto-core/schema'
 
 import type * as s_out from "pareto-csv/schemas/csv/schema"
 
