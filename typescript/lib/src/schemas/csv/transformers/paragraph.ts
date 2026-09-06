@@ -1,5 +1,4 @@
 import * as p_ from 'pareto-core/transformer'
-import p_list_from_text from 'pareto-core/refiner/specials/list_from_text'
 
 //schemas
 import type * as s_in from "../schema.js"
@@ -26,6 +25,9 @@ namespace declarations {
 //shorthands
 import * as sh from "pareto-fountain-pen/modules/paragraph/schemas/paragraph/shorthands/deprecated"
 
+//dependencies
+import * as ser from "../serializers.js"
+
 export const CSV: declarations.CSV = ($, $p) => sh.pg.deprecated_composed(
     p_.literal.segmented_list([
         p_.from.optional($.header).decide(
@@ -44,25 +46,7 @@ export const CSV: declarations.CSV = ($, $p) => sh.pg.deprecated_composed(
 
 export const Row: declarations.Row = ($, $p) => sh.ph.rich_phrase(
     p_.from.list($.cells).map(
-        ($) => sh.ph.list_of_characters(
-            p_.literal.segmented_list([
-                p_.literal.list([
-                    0x22, //"
-                ]),
-                p_.from.list(p_list_from_text(
-                    $,
-                    ($) => $ === 0x22 //"
-                        ? p_.literal.list([0x22, 0x22]) //escape "
-                        : p_.literal.list([$]),
-                ),
-                ).flatten(
-                    ($) => $
-                ),
-                p_.literal.list([
-                    0x22, //"
-                ])
-            ])
-        )
+        ($) => sh.ph.text(ser.Cell($))
     ),
     sh.ph.nothing(),
     sh.ph.nothing(),

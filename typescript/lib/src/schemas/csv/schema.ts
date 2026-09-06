@@ -8,5 +8,7 @@ export type CSV = {
 export type Rows = p_.List<Row>
 
 export type Row = {
-    'cells': p_.List<string>
+    'cells': p_.List<Cell>
 }
+
+export type Cell = string
